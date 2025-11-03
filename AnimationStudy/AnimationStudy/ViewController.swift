@@ -28,9 +28,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
         setUI()
         setLayout()
         addTarget()
+    }
+    
+    private func setStyle() {
+        view.backgroundColor = .white
     }
     
     private func setUI() {
