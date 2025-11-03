@@ -91,26 +91,26 @@ final class Week01ViewController: UIViewController {
     }
     
     @objc private func animateImage() {
-        let originalCenter = imageView.center
-        let originalTransform = imageView.transform
-        
         UIView.animate(withDuration: 1.0, animations: {
-            self.imageView.center.x += 80
+            self.imageView.transform = CGAffineTransform(translationX: 80, y: 0)
         }) { _ in
             UIView.animate(withDuration: 1.0, animations: {
-                self.imageView.transform = self.imageView.transform.rotated(by: .pi)
+                self.imageView.transform = CGAffineTransform(translationX: 80, y: 0)
+                    .rotated(by: .pi)
             }) { _ in
                 UIView.animate(withDuration: 1.0, animations: {
-                    self.imageView.transform = self.imageView.transform.scaledBy(x: 1.5, y: 1.5)
+                    self.imageView.transform = CGAffineTransform(translationX: 80, y: 0)
+                        .rotated(by: .pi)
+                        .scaledBy(x: 1.5, y: 1.5)
                 }) { _ in
                     UIView.animate(withDuration: 1.0) {
-                        self.imageView.transform = originalTransform
-                        self.imageView.center = originalCenter
+                        self.imageView.transform = .identity
                     }
                 }
             }
         }
     }
+
     
     @objc private func showToastTapped() {
         view.showToastMessage()
