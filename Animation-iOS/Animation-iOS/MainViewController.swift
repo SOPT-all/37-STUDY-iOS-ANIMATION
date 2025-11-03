@@ -70,14 +70,19 @@ class MainViewController: UIViewController {
     
     
     @objc private func transformDidTap() {
+        transFormButton.shakeButton()
+        
         UIView.animate(withDuration: 1, delay: 0, options:[.beginFromCurrentState]) {
             self.kirby.transform = CGAffineTransform(translationX: 100, y: 100)
         }
         
         self.view.makeToast("아이고 힘들다", position: .top)
+        
     }
         
     @objc private func rotateDidTap() {
+        
+        rotateButton.shakeButton()
         UIView.animate(withDuration: 1, delay: 0, options:[.beginFromCurrentState]) {
             self.kirby.transform = CGAffineTransform(rotationAngle: .pi)
         }
@@ -86,6 +91,8 @@ class MainViewController: UIViewController {
     }
         
     @objc private func scaleDidTap() {
+        
+        scaleButton.shakeButton()
         UIView.animate(withDuration: 1, delay: 0, options:[.beginFromCurrentState]) {
             self.kirby.transform = CGAffineTransform(scaleX: 5, y: 5 )
         }
@@ -94,6 +101,8 @@ class MainViewController: UIViewController {
     }
     
     @objc private func amazingBtnDidTap() {
+        
+        AmazingButton.shakeButton()
         UIView.animateKeyframes(withDuration: 2, delay: 0, options: [.beginFromCurrentState]) {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4) {
                 let translation = CGAffineTransform(translationX: 100, y: 100)
@@ -103,23 +112,25 @@ class MainViewController: UIViewController {
             
             UIView.addKeyframe(withRelativeStartTime: 1/4, relativeDuration: 1/4) {
                 let translation = CGAffineTransform(translationX: 100, y: -100)
-                let rotation = CGAffineTransform(rotationAngle: .pi)
+                let rotation = CGAffineTransform(rotationAngle: .pi*2)
                 self.kirby.transform = translation.concatenating(rotation)
             }
             
             UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
                 let translation = CGAffineTransform(translationX: -100, y: -100)
-                let rotation = CGAffineTransform(rotationAngle: .pi)
+                let rotation = CGAffineTransform(rotationAngle: .pi*3)
                 self.kirby.transform = translation.concatenating(rotation)
             }
             
             UIView.addKeyframe(withRelativeStartTime: 3/4, relativeDuration: 1/4) {
                 let translation = CGAffineTransform(translationX: -100, y: 100)
-                let rotation = CGAffineTransform(rotationAngle: .pi)
+                let rotation = CGAffineTransform(rotationAngle: .pi*4)
                 self.kirby.transform = translation.concatenating(rotation)
             }
+        } completion: { _ in
+            self.kirby.transform = .identity
         }
-        self.view.makeToast("이거 봤으면 인간적으로 돈 내자.", position: .top)
+        self.view.makeToast("이만큼 했으면 인간적으로 돈 내자.", position: .top)
 
     }
     
