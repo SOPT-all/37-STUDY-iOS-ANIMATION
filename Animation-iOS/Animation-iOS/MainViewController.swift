@@ -110,25 +110,27 @@ class MainViewController: UIViewController {
                 self.kirby.transform = translation.concatenating(rotation)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 1/4, relativeDuration: 1/4) {
+            UIView.addKeyframe(withRelativeStartTime: 1/5, relativeDuration: 1/5) {
                 let translation = CGAffineTransform(translationX: 100, y: -100)
                 let rotation = CGAffineTransform(rotationAngle: .pi*2)
                 self.kirby.transform = translation.concatenating(rotation)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
+            UIView.addKeyframe(withRelativeStartTime: 2/5, relativeDuration: 1/5) {
                 let translation = CGAffineTransform(translationX: -100, y: -100)
                 let rotation = CGAffineTransform(rotationAngle: .pi*3)
                 self.kirby.transform = translation.concatenating(rotation)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 3/4, relativeDuration: 1/4) {
+            UIView.addKeyframe(withRelativeStartTime: 3/5, relativeDuration: 1/5) {
                 let translation = CGAffineTransform(translationX: -100, y: 100)
                 let rotation = CGAffineTransform(rotationAngle: .pi*4)
                 self.kirby.transform = translation.concatenating(rotation)
             }
-        } completion: { _ in
-            self.kirby.transform = .identity
+            
+            UIView.addKeyframe(withRelativeStartTime: 4/5, relativeDuration: 1/5) {
+                self.kirby.transform = .identity
+            }
         }
         self.view.makeToast("이만큼 했으면 인간적으로 돈 내자.", position: .top)
 
