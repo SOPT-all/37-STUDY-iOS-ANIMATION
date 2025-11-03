@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CA54AA7D2EB8B1040073AAE1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA54AA7C2EB8B1040073AAE1 /* SnapKit */; };
+		CA54AA862EB8D3300073AAE1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CA54AA852EB8D3300073AAE1 /* Toast */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CA54AA5F2EB8AF930073AAE1 /* Animation-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animation-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA54AA862EB8D3300073AAE1 /* Toast in Frameworks */,
+				CA54AA7D2EB8B1040073AAE1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "Animation-iOS";
 			packageProductDependencies = (
+				CA54AA7C2EB8B1040073AAE1 /* SnapKit */,
+				CA54AA852EB8D3300073AAE1 /* Toast */,
 			);
 			productName = "Animation-iOS";
 			productReference = CA54AA5F2EB8AF930073AAE1 /* Animation-iOS.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = CA54AA562EB8AF930073AAE1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CA54AA842EB8D3300073AAE1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CA54AA602EB8AF930073AAE1 /* Products */;
 			projectDirPath = "";
@@ -150,7 +163,6 @@
 				INFOPLIST_FILE = "Animation-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -182,7 +194,6 @@
 				INFOPLIST_FILE = "Animation-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,6 +356,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		CA54AA842EB8D3300073AAE1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA54AA7C2EB8B1040073AAE1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CA54AA852EB8D3300073AAE1 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA54AA842EB8D3300073AAE1 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA54AA572EB8AF930073AAE1 /* Project object */;
 }
