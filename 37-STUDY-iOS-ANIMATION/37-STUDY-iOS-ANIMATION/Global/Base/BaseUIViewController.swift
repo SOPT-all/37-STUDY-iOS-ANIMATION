@@ -1,6 +1,6 @@
 //
 //  BaseUIViewController.swift
-//  sopt-37th-Assignment
+//  37-STUDY-iOS-ANIMATION
 //
 //  Created by 김나연 on 10/29/25.
 //
