@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 2.
         let window = UIWindow(windowScene: windowScene)
         // 3.
-        let vc = UINavigationController(rootViewController: Week1ViewController())
+        let vc = UINavigationController(rootViewController: ButtonViewController())
         // 4.
         window.rootViewController = vc
         // 5.
