@@ -37,6 +37,7 @@ final class GestureViewController: BaseUIViewController {
     private let oni2Image = UIImageView().then {
         $0.image = .oni
         $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
     }
     
     
@@ -78,6 +79,7 @@ final class GestureViewController: BaseUIViewController {
     
     override func addTarget() {
         oni1Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(oniDidTap)))
+        oni2Image.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(oniDidMove(_:))))
     }
 }
 
@@ -111,5 +113,13 @@ extension GestureViewController {
                 self.title1label.textColor = originalColor
             }
         }
+    }
+    
+    @objc private func oniDidMove(_ sender: UIPanGestureRecognizer) {
+        let transition = sender.translation(in: self.oni2Image)
+        let changedX = oni2Image.center.x + transition.x
+        let changedY = oni2Image.center.y + transition.y
+        self.oni2Image.center = .init(x: changedX, y: changedY)
+        sender.setTranslation(.zero, in: self.oni2Image)
     }
 }
