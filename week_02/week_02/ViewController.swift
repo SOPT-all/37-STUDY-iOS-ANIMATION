@@ -14,8 +14,9 @@ final class ViewController: UIViewController {
     // MARK: - UI Components
     
     private let titleLabel = UILabel().then {
-        $0.text = "고냐니가 세상을 지배한다"
+        $0.text = "★고냐니가 세상을 지배한다★"
         $0.font = .systemFont(ofSize: 15, weight: .bold)
+        $0.isUserInteractionEnabled = true
     }
     
     
@@ -31,6 +32,8 @@ final class ViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
     
+    private var originalCenter: CGPoint = .zero
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -40,6 +43,13 @@ final class ViewController: UIViewController {
         setLayout()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if originalCenter == .zero {
+            originalCenter = gonyani2.center
+        }
+    }
+
     // MARK: - Setup Methods
     
     private func setTarget() {
@@ -73,11 +83,7 @@ final class ViewController: UIViewController {
     
     @objc private func titleDidTap() {
         UIView.animate(withDuration: 0.3) {
-            self.gonyani.transform = .identity
-            self.gonyani2.snp.makeConstraints {
-                $0.centerY.equalTo(self.gonyani)
-                $0.trailing.equalToSuperview().inset(30)
-            }
+            self.gonyani2.center = self.originalCenter
         }
     }
     
