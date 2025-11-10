@@ -64,6 +64,7 @@ class MainViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Kirby")
         imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -137,8 +138,30 @@ class MainViewController: UIViewController {
     }
     
     
+    func setAddTarget() {
+        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotateGesture(_:)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+        
+        kirby.addGestureRecognizer(rotationGesture)
+        kirby.addGestureRecognizer(panGesture)
+    }
     
     
+    @objc
+    func rotateGesture(_ gesture: UIRotationGestureRecognizer) {
+        kirby.transform = kirby.transform.rotated(by: gesture.rotation)
+        gesture.rotation = 0
+    }
+    
+    @objc
+    func panGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.kirby)
+        let changedX = kirby.center.x + translation.x
+        let changedY = kirby.center.y + translation.y
+        
+        self.kirby.center = CGPoint(x: changedX, y: changedY)
+        gesture.setTranslation(.zero, in: self.kirby)
+    }
     
     
     func setHierarchy() {
@@ -192,6 +215,7 @@ class MainViewController: UIViewController {
         
         setHierarchy()
         setLayout()
+        setAddTarget()
         
         view.layoutIfNeeded()
 
