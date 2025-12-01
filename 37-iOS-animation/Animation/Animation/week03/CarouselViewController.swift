@@ -45,6 +45,7 @@ final class CarouselViewController: UIViewController {
     private func setUI() {
         view.backgroundColor = .white
         view.addSubview(collectionView)
+        self.navigationController?.isNavigationBarHidden = true
         collectionView.snp.makeConstraints { $0.edges.equalToSuperview()
         }
     }
@@ -68,9 +69,9 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
             realIndex = indexPath.item - 1
         }
 
-        let iv = UIImageView(image: images[realIndex])
-        iv.contentMode = .scaleAspectFit
-        cell.backgroundView = iv
+        let imageView = UIImageView(image: images[realIndex])
+        imageView.contentMode = .scaleAspectFit
+        cell.backgroundView = imageView
 
         return cell
     }
