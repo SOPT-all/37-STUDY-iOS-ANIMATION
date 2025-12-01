@@ -38,7 +38,3 @@ extension UIView {
         
     }
 }
-
-#Preview{
-    ViewController()
-}
