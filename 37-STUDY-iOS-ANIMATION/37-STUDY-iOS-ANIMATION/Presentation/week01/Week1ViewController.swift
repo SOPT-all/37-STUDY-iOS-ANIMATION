@@ -115,7 +115,7 @@ extension Week1ViewController {
                 UIView.addKeyframe(withRelativeStartTime: 1/3, relativeDuration: 1/3) {
                     self.dumplingImage.transform = CGAffineTransform(rotationAngle: .pi)
                 }
-                UIView.addKeyframe(withRelativeStartTime: 3/3, relativeDuration: 1/4) {
+                UIView.addKeyframe(withRelativeStartTime: 2/3, relativeDuration: 1/3) {
                     self.dumplingImage.transform = .identity
                 }
             }
