@@ -2,11 +2,8 @@
 //  InfinityCarouselViewController.swift
 //  week_03
 //
-//  Created by 조영서 on 11/30/25.
-//
 
 import UIKit
-
 import SnapKit
 import Then
 
@@ -25,20 +22,20 @@ final class InfinityCarouselViewController: UIViewController {
         UIImage(named: "tamama1")
     ]
     
-    private let realImageCount = 6
+    private let realCount = 6
     
-    // MARK: - UI Components
+    // MARK: - UI
     
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout().then {
             $0.scrollDirection = .horizontal
             $0.minimumLineSpacing = 0
+            $0.itemSize = CGSize(width: 250, height: 250)
         }
     ).then {
         $0.isPagingEnabled = true
         $0.showsHorizontalScrollIndicator = false
-        $0.backgroundColor = .clear
         $0.delegate = self
         $0.dataSource = self
     }
@@ -59,18 +56,10 @@ final class InfinityCarouselViewController: UIViewController {
         
         setUI()
         setLayout()
-        setInitialPosition()
+        moveToStart()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.itemSize = collectionView.bounds.size
-        }
-    }
-    
-    // MARK: - Setup Methods
+    // MARK: - Setup
     
     private func setUI() {
         view.addSubview(collectionView)
@@ -81,8 +70,7 @@ final class InfinityCarouselViewController: UIViewController {
     
     private func setLayout() {
         collectionView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
+            $0.center.equalToSuperview()
             $0.size.equalTo(250)
         }
         
@@ -92,7 +80,7 @@ final class InfinityCarouselViewController: UIViewController {
         }
     }
     
-    private func setInitialPosition() {
+    private func moveToStart() {
         DispatchQueue.main.async {
             self.collectionView.scrollToItem(
                 at: IndexPath(item: 1, section: 0),
@@ -106,14 +94,13 @@ final class InfinityCarouselViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension InfinityCarouselViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        images.count
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CarouselCell.identifier,
             for: indexPath
@@ -127,17 +114,17 @@ extension InfinityCarouselViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension InfinityCarouselViewController: UICollectionViewDelegate {
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.bounds.width
         let page = Int(scrollView.contentOffset.x / width)
         
-        let realIndex = (page - 1 + realImageCount) % realImageCount
+        let realIndex = (page - 1 + realCount) % realCount
         pageControl.currentPage = realIndex
         
         if page == 0 {
             scrollView.setContentOffset(.init(x: width * 6, y: 0), animated: false)
-        }
-        if page == 7 {
+        } else if page == 7 {
             scrollView.setContentOffset(.init(x: width * 1, y: 0), animated: false)
         }
     }
