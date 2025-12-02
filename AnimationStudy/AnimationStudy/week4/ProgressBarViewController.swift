@@ -1,5 +1,5 @@
 //
-//  ProgressBarContentView.swift
+//  ProgressBarViewController.swift
 //  AnimationStudy
 //
 //  Created by 신혜연 on 12/2/25.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProgressBarContentView: UIViewController {
+class ProgressBarViewController: UIViewController {
     
     private let progressBar = ProgressBarView()
     
