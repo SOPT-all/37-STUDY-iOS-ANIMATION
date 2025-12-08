@@ -146,12 +146,30 @@ class MainViewController: UIViewController {
         kirby.addGestureRecognizer(panGesture)
     }
     
-    
+    /*
     @objc
     func rotateGesture(_ gesture: UIRotationGestureRecognizer) {
         kirby.transform = kirby.transform.rotated(by: gesture.rotation)
         gesture.rotation = 0
     }
+    */
+    
+    @objc
+       func rotateGesture(_ gesture: UIRotationGestureRecognizer) {
+           
+               if gesture.rotation > 0 {
+                   UIView.animate(withDuration: 1){
+                       self.kirby.transform = CGAffineTransform(rotationAngle: .pi * 3)
+                       
+                   }
+               } else if gesture.rotation < 0 {
+                   UIView.animate(withDuration: 1){
+                       self.kirby.transform = CGAffineTransform(rotationAngle: .pi * -3)
+                   }
+               }
+           gesture.rotation = 0
+
+           }
     
     @objc
     func panGesture(_ gesture: UIPanGestureRecognizer) {
