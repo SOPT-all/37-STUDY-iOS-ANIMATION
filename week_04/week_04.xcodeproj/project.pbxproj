@@ -15,22 +15,9 @@
 		3AD7405F2EE7D3D9003BD6D2 /* week_04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week_04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3AD740712EE7D3DB003BD6D2 /* Exceptions for "week_04" folder in "week_04" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 3AD7405E2EE7D3D9003BD6D2 /* week_04 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3AD740612EE7D3D9003BD6D2 /* week_04 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3AD740712EE7D3DB003BD6D2 /* Exceptions for "week_04" folder in "week_04" target */,
-			);
 			path = week_04;
 			sourceTree = "<group>";
 		};

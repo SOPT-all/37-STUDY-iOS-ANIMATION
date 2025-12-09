@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class ProgressBarViewController: UIViewController {
 
     override func viewDidLoad() {
