@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		510137A72EACE10D00C021CE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 510137A62EACE10D00C021CE /* SnapKit */; };
 		510137AA2EACE11300C021CE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 510137A92EACE11300C021CE /* Then */; };
+		513CE2802EEF05D2006C1062 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 513CE27F2EEF05D2006C1062 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			files = (
 				510137A72EACE10D00C021CE /* SnapKit in Frameworks */,
 				510137AA2EACE11300C021CE /* Then in Frameworks */,
+				513CE2802EEF05D2006C1062 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				510137A62EACE10D00C021CE /* SnapKit */,
 				510137A92EACE11300C021CE /* Then */,
+				513CE27F2EEF05D2006C1062 /* Lottie */,
 			);
 			productName = "37-iOS-animation";
 			productReference = 5101377F2EACDFF800C021CE /* 37-iOS-animation.app */;
@@ -119,6 +122,7 @@
 			packageReferences = (
 				510137A52EACE10D00C021CE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				510137A82EACE11300C021CE /* XCRemoteSwiftPackageReference "Then" */,
+				513CE27E2EEF05D2006C1062 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 510137802EACDFF800C021CE /* Products */;
@@ -364,6 +368,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		513CE27E2EEF05D2006C1062 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -376,6 +388,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 510137A82EACE11300C021CE /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		513CE27F2EEF05D2006C1062 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 513CE27E2EEF05D2006C1062 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
