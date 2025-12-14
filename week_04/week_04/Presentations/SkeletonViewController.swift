@@ -11,6 +11,10 @@ import SnapKit
 import Then
 
 final class SkeletonViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private var isSkeletonActive = false
 
     // MARK: - UI Components
 
@@ -24,10 +28,6 @@ final class SkeletonViewController: UIViewController {
         $0.textAlignment = .center
         $0.backgroundColor = .gray
     }
-
-    // MARK: - State
-
-    private var isSkeletonActive = false
 
     // MARK: - Lifecycle
 
