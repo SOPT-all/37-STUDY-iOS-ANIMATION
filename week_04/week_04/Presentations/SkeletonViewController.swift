@@ -99,7 +99,6 @@ final class SkeletonViewController: UIViewController {
 
         gonyaniImageView.layer.removeAllAnimations()
         loadingLabel.layer.removeAllAnimations()
-
     }
 
     private func loadImage() {
