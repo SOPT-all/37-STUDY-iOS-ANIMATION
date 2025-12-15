@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA4C8DD32EF02B2D004FDBB5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CA4C8DD22EF02B2D004FDBB5 /* Then */; };
 		CA54AA7D2EB8B1040073AAE1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA54AA7C2EB8B1040073AAE1 /* SnapKit */; };
 		CA54AA862EB8D3300073AAE1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CA54AA852EB8D3300073AAE1 /* Toast */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA54AA862EB8D3300073AAE1 /* Toast in Frameworks */,
+				CA4C8DD32EF02B2D004FDBB5 /* Then in Frameworks */,
 				CA54AA7D2EB8B1040073AAE1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				CA54AA7C2EB8B1040073AAE1 /* SnapKit */,
 				CA54AA852EB8D3300073AAE1 /* Toast */,
+				CA4C8DD22EF02B2D004FDBB5 /* Then */,
 			);
 			productName = "Animation-iOS";
 			productReference = CA54AA5F2EB8AF930073AAE1 /* Animation-iOS.app */;
@@ -119,6 +122,7 @@
 			packageReferences = (
 				CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CA54AA842EB8D3300073AAE1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				CA4C8DD12EF02B2D004FDBB5 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CA54AA602EB8AF930073AAE1 /* Products */;
@@ -358,6 +362,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA4C8DD12EF02B2D004FDBB5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -377,6 +389,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA4C8DD22EF02B2D004FDBB5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA4C8DD12EF02B2D004FDBB5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		CA54AA7C2EB8B1040073AAE1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA54AA7B2EB8B1040073AAE1 /* XCRemoteSwiftPackageReference "SnapKit" */;

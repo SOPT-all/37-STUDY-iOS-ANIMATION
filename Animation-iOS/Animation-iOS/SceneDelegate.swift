@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       // 2.
         let window = UIWindow(windowScene: windowScene)
       // 3.
-        let vc = UINavigationController(rootViewController: SegmentedControlViewController())
+        let vc = UINavigationController(rootViewController: ProgressBarViewController())
       // 4.
         window.rootViewController = vc
       // 5.
