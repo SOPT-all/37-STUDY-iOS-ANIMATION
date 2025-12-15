@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B0C0F8152EB8DA5A00A48CCF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0C0F8142EB8DA5A00A48CCF /* SnapKit */; };
 		B0C0F8192EB8DBBF00A48CCF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B0C0F8182EB8DBBF00A48CCF /* Then */; };
+		B0DFA4542EF0382D005E61DC /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = B0DFA4532EF0382D005E61DC /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C0F8152EB8DA5A00A48CCF /* SnapKit in Frameworks */,
+				B0DFA4542EF0382D005E61DC /* SkeletonView in Frameworks */,
 				B0C0F8192EB8DBBF00A48CCF /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				B0C0F8142EB8DA5A00A48CCF /* SnapKit */,
 				B0C0F8182EB8DBBF00A48CCF /* Then */,
+				B0DFA4532EF0382D005E61DC /* SkeletonView */,
 			);
 			productName = Animation;
 			productReference = B0C0F7F72EB8D82700A48CCF /* Animation.app */;
@@ -119,6 +122,7 @@
 			packageReferences = (
 				B0C0F8132EB8DA5A00A48CCF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B0C0F8172EB8DBBF00A48CCF /* XCRemoteSwiftPackageReference "Then" */,
+				B0DFA4522EF0382D005E61DC /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B0C0F7F82EB8D82700A48CCF /* Products */;
@@ -362,6 +366,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		B0DFA4522EF0382D005E61DC /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -374,6 +386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B0C0F8172EB8DBBF00A48CCF /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		B0DFA4532EF0382D005E61DC /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0DFA4522EF0382D005E61DC /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
