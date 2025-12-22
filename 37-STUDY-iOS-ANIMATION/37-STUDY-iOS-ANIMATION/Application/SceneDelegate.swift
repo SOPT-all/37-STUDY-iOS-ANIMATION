@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         // 3.
         let vc = UINavigationController(rootViewController: InfinityCarouselViewController())
+        let vc = UINavigationController(rootViewController: LottieViewController())
         // 4.
         window.rootViewController = vc
         // 5.
