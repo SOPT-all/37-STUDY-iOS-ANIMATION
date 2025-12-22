@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 2.
         let window = UIWindow(windowScene: windowScene)
         // 3.
-        let vc = UINavigationController(rootViewController: LottieViewController())
+        let vc = UINavigationController(rootViewController: StickyHeaderViewController())
         // 4.
         window.rootViewController = vc
         // 5.
